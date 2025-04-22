@@ -1,0 +1,32 @@
+<div class="content">
+  <h1 class="portfolio">Portfolio</h1>
+  <div class="project">
+    <div class="dropdown">
+      <button class="dropdown-button">Experience Works</button>
+      <ul class="dropdown-menu show-always">
+        <li [class.active]="selectedExperience === 'desktop'" (click)="selectExperience('desktop')">Desktop Development</li>
+        <li [class.active]="selectedExperience === 'mobile'" (click)="selectExperience('mobile')">Mobile Development</li>
+        <li [class.active]="selectedExperience === 'api'" (click)="selectExperience('api')">API</li>
+      </ul>
+      
+    </div>
+
+    <!-- Slider Section -->
+    <div *ngIf="selectedExperience" class="slider-wrapper">
+      <button class="slide-btn left" (click)="scrollSlider('left')">◀</button>
+
+      <div class="slider-container">
+        <div class="slider">
+          <img
+            *ngFor="let img of selectedExperience === 'desktop' ? desktopImages :
+                            selectedExperience === 'mobile' ? mobileImages : apiImages"
+            [src]="img"
+            alt="Experience Image"
+          />
+        </div>
+      </div>
+
+      <button class="slide-btn right" (click)="scrollSlider('right')">▶</button>
+    </div>
+  </div>
+</div>

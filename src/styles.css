@@ -1,0 +1,44 @@
+/* Reset all margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full width and height without extra white spaces */
+html, body {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #2e2e2e, #1e90ff);
+}
+
+/* Ensure the root container has no extra space */
+app-root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Fix unwanted spacing in router-outlet */
+router-outlet {
+    display: block;
+    width: 100%;
+}
+
+/* Section Styling */
+#home, #about {
+    width: 100%;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+/* Mainpage & Content */
+.mainpage, .content {
+    padding: 40px;
+    width: 100%;
+    max-width: 1200px;
+    text-align: left;
+}
+

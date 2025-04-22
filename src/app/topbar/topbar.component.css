@@ -1,0 +1,236 @@
+/* Responsive and Fixed Topbar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1); /* Slight transparency */
+  backdrop-filter: blur(10px);
+  padding: 15px 20px;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  max-width: 1200px;
+  border-radius: 12px;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Fix overflow issue */
+.topbar:hover {
+  box-shadow: 0 0 15px rgba(0, 173, 181, 0.8);
+}
+
+/* Name Styling */
+.name h3 {
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.lastname { color: #00adb5; }
+.middlename { color: white; }
+.firstname { color: #031a1b; }
+
+/* Navigation */
+nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+/* Navigation Links */
+.nav-item {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-item:hover {
+  color: #00adb5;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Fix Download Button Overflow */
+.download {
+  color: white;
+  background: #00adb5;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap; /* Prevents wrapping */
+  max-width: 150px; /* Ensures it stays inside */
+}
+
+.download:hover {
+  background: #00b3a1;
+  transform: translateY(-2px);
+}
+
+/* Mobile Navigation */
+.menu-toggle {
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+  display: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu-toggle:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 1024px) {
+  .topbar {
+    width: 90%;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .download {
+    max-width: 120px; /* Adjust for medium screens */
+  }
+}
+@media (max-width: 909px) {
+  .topbar {
+    display: flex;
+    justify-content: space-between; /* Keeps items aligned */
+    align-items: center; /* Ensures vertical alignment */
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px; /* Aligns it to the right */
+    top: 50%;
+    transform: translateY(-50%); /* Centers vertically */
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px; /* Below the topbar */
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 12px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-top: 2px solid #00adb5;
+    border-radius: 0 0 10px 10px;
+  }
+
+  nav.open {
+    display: flex;
+  }
+}
+
+
+@media (max-width: 920px) {
+  .menu-toggle {
+    display: block; /* Show the hamburger menu */
+  }
+
+  nav {
+    display: none; /* Hide the nav by default */
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 12px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-top: 2px solid #00adb5;
+    border-radius: 0 0 10px 10px;
+  }
+
+  nav.open {
+    display: flex; /* Show the menu when toggled */
+  }
+
+  .nav-item {
+    padding: 14px;
+    text-align: center;
+    display: block;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-item:last-child {
+    border-bottom: none;
+  }
+
+  .download {
+    width: 100%;
+    padding: 12px 20px;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-top: 10px;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 12px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-top: 2px solid #00adb5;
+    border-radius: 0 0 10px 10px;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  .nav-item {
+    padding: 14px;
+    text-align: center;
+    display: block;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-item:last-child {
+    border-bottom: none;
+  }
+
+  /* Adjust the download button in mobile */
+  .download {
+    width: 100%;
+    padding: 12px 20px;
+    text-align: center;
+    margin-top: 10px;
+  }
+}

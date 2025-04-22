@@ -1,0 +1,175 @@
+/* General Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1a2e;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Add padding to the top of the content section */
+.content-container {
+  margin-top: 80px; /* Adjust the value based on your top bar height */
+  padding: 20px;
+  max-width: 900px;
+  border-radius: 10px;
+  transition: opacity 0.8s ease-in-out, transform 1s ease-in-out;
+}
+
+/* You can also add some padding to the top of the section directly */
+.content {
+  padding-top: 25vh; /* This will ensure there is space above the content */
+  padding-left: 15vh;
+}
+
+
+/* Header (H1 Styling) */
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #00adb5;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  opacity: 0;
+  animation: fadeInUp 1.5s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+/* Paragraph (P Styling) */
+p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  opacity: 0;
+  line-height: 1.6;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+/* Tech Stack Styling */
+.tech-stack {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.tech {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 1.2s;
+}
+
+.tech img {
+  width: 100%;
+  max-width: 80px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.tech img:hover {
+  transform: scale(1.2);
+}
+
+/* Button Styling */
+.bt {
+  display: inline-block;
+  padding: 22px 24px;
+  margin-top: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  background: #00adb5;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.bt:hover {
+  background: #008c96;
+  transform: scale(1.05);
+}
+
+/* Social Icons Below Button */
+.social-icons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  font-size: 2rem;
+  color: #ffffff;
+  transition: transform 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+
+.social-icons i {
+  color: #00adb5;
+}
+
+.social-icons a:hover i {
+  color: #008c96;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px; /* Adjust margin for mobile */
+    margin-left: 0;
+    padding: 10px;
+}
+
+.content {
+    width: 90%; /* Adjust width for better spacing */
+    margin-left: 4vh;
+    padding: 10px;
+    padding-top: 13vh;
+}
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .tech-stack {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+
+  .tech img {
+    max-width: 60px;
+  }
+}

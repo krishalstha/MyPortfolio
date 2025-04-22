@@ -1,0 +1,145 @@
+/* Sidebar */
+.sidebar {
+    width: 100px;
+    height: calc(100vh - 50vh); /* Adjust for topbar height */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    position: fixed;
+    left: 100px;
+    top: 250px; /* Adjusted to avoid overlap with topbar */
+    border-radius: 12px; /* Soft rounded edges */
+    z-index: 999;
+    transform: translateX(-100%); /* Initially hide on mobile */
+    transition: transform 0.5s ease-in-out; /* Animation for sidebar sliding in */
+}
+
+/* Active state for sidebar (visible on mobile) */
+.sidebar.active {
+    transform: translateX(0); /* Sidebar slides in */
+    animation: slideIn 0.5s ease-out; /* Apply the animation when active */
+}
+
+/* Keyframes for sliding in animation */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%); /* Start from hidden state */
+    }
+    100% {
+        transform: translateX(0); /* End in the visible state */
+    }
+}
+
+/* Neon Glow Effect on Hover for Topbar */
+.sidebar:hover {
+    box-shadow: 0 0 15px rgba(0, 173, 181, 0.8); /* Neon glow effect */
+}
+
+/* Profile container */
+.profile-container {
+    width: 100px;
+    height: 100px;
+    border-radius: 20%;
+    overflow: hidden;
+    margin-left: -28px;
+    margin-bottom: 50px;
+}
+
+/* Profile image */
+.profile-img {
+    width: 100%;
+    height: auto;
+}
+
+/* Menu styling */
+.menu {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+/* Menu item styling */
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #00adb5;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 30px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.menu-item:hover {
+    background: transparent;
+    margin-left: -15px;
+    transform: scale(1.1); /* Grow on hover */
+    box-shadow: 0 0 50px rgba(0, 173, 181, 0.8); /* Neon glow effect on hover */
+}
+
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 90%; /* Full width but not too large */
+        max-width: 400px; /* Prevent extra-wide sidebar */
+        height: 60px; /* Fixed height for navigation */
+        
+        /* 🚀 Override desktop styles */
+        left: 50% !important; /* Center it */
+        top: auto !important; /* Remove desktop top positioning */
+        bottom: 0 !important; /* Stick it to the bottom */
+        transform: translateX(-50%) !important; /* Ensure centering */
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        border-radius: 30px 30px 0 0;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
+        padding: 10px;
+        z-index: 1000;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .menu-item {
+        font-size: 22px;
+        padding: 10px;
+        color: #00adb5;
+        transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .menu-item:hover {
+        transform: scale(1.2);
+        color: #ffffff;
+    }
+
+    /* Hide profile image on mobile */
+    .profile-container {
+        display: none;
+    }
+}
+
+/* ✅ Special Adjustments for Small Devices (e.g., iPhone SE) */
+@media (max-width: 375px) {
+    .sidebar {
+        height: 55px;
+        width: 95%;
+    }
+
+    .menu-item {
+        font-size: 18px;
+    }
+}
+
+
+

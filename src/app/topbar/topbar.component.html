@@ -1,0 +1,22 @@
+<div class="topbar">
+  
+  <div class="name">
+    <h3>
+      <span class="lastname">Shrestha</span>
+      <span class="middlename">•</span>
+      <span class="firstname">Krishal</span>
+    </h3>
+  </div>
+  <div class="menu-toggle" (click)="isMenuOpen = !isMenuOpen">
+    &#9776;
+  </div>
+  <nav [class.open]="isMenuOpen">
+    <a href="#home" class="nav-item">Home</a>
+    <a href="#about" class="nav-item">About</a>
+    <a href="#portfolio" class="nav-item">Portfolio</a>
+    <a href="#experience" class="nav-item">Experience</a>
+    <a href="#contact" class="nav-item">Contact</a>
+    <a href="KrishalShrestha_CV.pdf" download class="download">Download CV</a>
+
+  </nav>
+</div>

@@ -1,0 +1,264 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-left: 70px;
+    width: 75%;
+    height: 85vh;
+}
+.head {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #000000;
+    text-shadow: 0 0 20px rgba(0, 123, 255, 0.8);
+    margin-bottom: 40px;
+    text-align: center;
+}
+.contact-form {
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    height: 80% ;
+    max-width: 800px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+.contact-form:hover {
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.8), 0 0 50px rgba(0, 255, 255, 0.5);
+}
+.form-group {
+    margin-bottom: 25px;
+}
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+}
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1.3rem;
+}
+textarea {
+    height: 150px;
+    max-height: 200px; /* Prevents excessive expansion */
+    resize: vertical; /* Allows resizing only vertically */
+    overflow: auto; /* Enables scrolling when content exceeds max height */
+  }
+  
+.submit-btn {
+    width: 100%;
+    padding: 18px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+}
+.submit-btn:hover {
+    background: #0056b3;
+}
+/* 🔹 Laptops & Medium Screens (1024px and below) */
+@media (max-width: 1024px) {
+    .contact {
+      width: 85%;
+    }
+    .contact-form {
+      padding: 2.5rem;
+      max-width: 700px;
+    }
+    .head {
+      font-size: 3rem;
+    }
+  }
+@media screen and (max-width: 768px) {
+    .contact {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+        padding: 20px;
+    }
+    .contact-form {
+        padding: 0.5rem;
+        width: 100%;
+        max-width: 400px;
+    }
+    .head {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+    label {
+        font-size: 1rem;
+    }
+    input, textarea {
+        padding: 12px;
+        font-size: 1rem;
+    }
+    textarea {
+        height: 120px;
+        max-height: 180px;
+        resize: none; /* Optional: Disables resizing on small screens */
+      }
+      
+    .submit-btn {
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+@media (max-width: 600px) {
+  .contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 90%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .contact-form {
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 380px; /* Prevents over-expansion on small screens */
+  }
+
+  .head {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  label {
+    font-size: 1rem;
+  }
+
+  input, textarea {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  textarea {
+    height: 120px;
+    max-height: 180px;
+    resize: vertical;
+    overflow: auto;
+  }
+
+  .submit-btn {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+
+/* 🔹 Small Phones (iPhone SE, Galaxy Fold, etc.) */
+@media (max-width: 400px) {
+  .contact-form {
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .head {
+    font-size: 1.8rem;
+  }
+
+  input, textarea {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  textarea {
+    height: 100px;
+  }
+
+  .submit-btn {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+    .contact {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+        margin-left: -5px;
+        width: 43vh;
+        height: 75vh;
+    }
+    .contact-form {
+      padding: 1.5rem;
+    }
+    .head {
+      font-size: 2rem;
+    }
+    label {
+      font-size: 1rem;
+    }
+    input, textarea {
+      font-size: 0.9rem;
+      padding: 10px;
+    }
+    .submit-btn {
+      font-size: 14px;
+      padding: 12px;
+    }
+  }
+  @media (max-width: 375px) {
+    .contact {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        margin-left: -27vh;
+        width: 100vh;
+        height: 90vh;
+    }
+
+    .contact-form {
+        padding: 1rem;
+        width: 100%;
+        max-width: 320px; /* Prevents overflow on small screens */
+    }
+
+    .head {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    label {
+        font-size: 0.95rem;
+    }
+
+    input, textarea {
+        font-size: 0.85rem;
+        padding: 8px;
+    }
+
+    textarea {
+        height: 100px;
+        max-height: 150px; /* Prevents overflow */
+        resize: vertical;
+        overflow: auto;
+    }
+
+    .submit-btn {
+        font-size: 13px;
+        padding: 10px;
+    }
+}
