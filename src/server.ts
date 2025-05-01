@@ -1,55 +1,13 @@
-import {
-  AngularAppEngine,
-  createRequestHandler,
-  writeResponseToNodeResponse,
-  isMainModule,
-} from '@angular/ssr';
+import { AngularAppEngine, createRequestHandler } from '@angular/ssr';
+import { getContext } from '@netlify/angular-runtime/context.mjs';
 
-import express from 'express';
-import { dirname, resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
-import { getContext } from '@netlify/angular-runtime';
+const angularAppEngine = new AngularAppEngine();
 
-const serverDistFolder = dirname(fileURLToPath(import.meta.url));
-const browserDistFolder = resolve(serverDistFolder, '../browser');
+export async function netlifyAppEngineHandler(request: Request): Promise<Response> {
+  const context = getContext();
 
-const app = express();
-const engine = new AngularAppEngine();
-
-/**
- * Serve static files from /browser
- */
-app.use(
-  express.static(browserDistFolder, {
-    maxAge: '1y',
-    index: false,
-    redirect: false,
-  }),
-);
-
-/**
- * Handle all other requests by rendering the Angular application.
- */
-app.use('/**', (req, res, next) => {
-  engine
-    .handle(req)
-    .then((response) =>
-      response ? writeResponseToNodeResponse(response, res) : next(),
-    )
-    .catch(next);
-});
-
-/**
- * Local server (used for development)
- */
-if (isMainModule(import.meta.url)) {
-  const port = process.env.PORT || 4000;
-  app.listen(port, () => {
-    console.log(`✅ Local server listening on http://localhost:${port}`);
-  });
+  const result = await angularAppEngine.handle(request, context);
+  return result || new Response('Not found', { status: 404 });
 }
 
-/**
- * Export Netlify-compatible handler
- */
-export const handler = createRequestHandler(engine, getContext());
+export const reqHandler = createRequestHandler(netlifyAppEngineHandler);
