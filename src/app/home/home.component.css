@@ -1,100 +1,77 @@
-/* General Styling */
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #1a1a2e;
-    color: #ffffff;
-    text-align: center;
-}
-
-/* Container for Content and Image */
 .content-container {
     display: flex;
-    justify-content: flex-start; /* Keep content and image aligned side by side */
-    align-items: center; /* Vertically align items in the container */
-    margin-top: 200px;
-    margin-left: 100px;
-    max-width: 900px; /* Limit max-width to prevent too much stretching */
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 180px;
+    margin-left: 5%;
+    max-width: 1000px;
     padding: 20px;
     border-radius: 10px;
     transition: opacity 0.8s ease-in-out, transform 1s ease-in-out;
+    gap: 40px;
 }
 
-/* Content Section */
 .content {
     max-width: 600px;
     padding: 20px;
     border-radius: 10px;
-    transition: opacity 0.8s ease-in-out, transform 1s ease-in-out;
 }
 
-/* Heading */
 .head {
-    font-size: 3rem;
+    font-size: clamp(2rem, 4vw, 3rem);
     font-weight: bold;
     line-height: 1.2;
-    margin-bottom: 30px; 
+    margin-bottom: 30px;
 }
+
 .first {
     color: #00adb5;
     animation: fadeIn 1.2s ease-in-out;
 }
+
 .top {
     color: #00adb5;
     display: block;
     animation: fadeIn 1.2s ease-in-out;
 }
+
 .down {
     color: #eeeeee;
     display: block;
     animation: fadeIn 1.5s ease-in-out;
 }
+
 .software {
-    font-size: 3rem;
+    font-size: clamp(2rem, 4vw, 3rem);
     animation: fadeIn 1.5s ease-in-out;
 }
 
-/* Paragraph */
 .paragraph {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 1.4vw, 1.2rem);
     margin-top: 10px;
-    margin-right: 100px;
     opacity: 0.9;
     line-height: 1.6;
     animation: fadeIn 1.8s ease-in-out;
-   
 }
 
-/* Image Styling with Animation */
 .profile-image {
-    width: 300px; /* Fixed width for desktop */
-    height: auto; /* Maintain aspect ratio */
+    width: min(300px, 35vw);
+    height: auto;
     border-radius: 50px;
     animation: fadeInScale 1.5s ease-in-out;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    margin-left: 0;  /* Add some space between content and image */
 }
 
-/* Image Hover Effect with Neon Glow */
 .profile-image:hover {
-    transform: scale(1.1);  /* Slightly enlarge */
+    transform: scale(1.1);
     box-shadow: 0 0 20px #00adb5, 0 0 40px #00adb5, 0 0 60px #00adb5;
 }
 
-/* Button Styling */
 .bt {
-    display: inline-block; /* Change to inline-block to ensure it's placed properly */
-    padding: 22px 24px;
-    margin-top: -100px;
-    margin-left: 10px;
-    margin-bottom: 50px;
-    font-size: 1rem;
+    display: inline-block;
+    padding: 18px 28px;
+    margin: 20px 0 30px 0;
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
     font-weight: bold;
     color: #ffffff;
     background: #00adb5;
@@ -104,18 +81,11 @@ body {
     transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
-/* Align button to the left side */
-.content-container .bt {
-    margin-left: 0;  /* Remove any default margin */
-}
-
-/* Button Hover Effect */
 .bt:hover {
     background: #008c96;
     transform: scale(1.05);
 }
 
-/* Animations */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
@@ -128,14 +98,15 @@ body {
 
 .social-icons {
     margin-top: 20px;
-    margin-left: 120px;
+    margin-left: 5%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .social-icons a {
-    margin-right: 15px;
-    margin-left: 20px;
-    font-size: 2rem; /* Increase icon size */
-    color: #ffffff; /* Icon color */
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    color: #ffffff;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -143,12 +114,10 @@ body {
     transform: scale(1.2);
 }
 
-/* Social Icons */
 .social-icons i {
     transition: color 0.3s ease-in-out;
 }
 
-/* GitHub - Black */
 .social-icons a[href*="github.com"] i {
     color: #171515;
 }
@@ -157,7 +126,6 @@ body {
     color: #333;
 }
 
-/* Facebook - Blue */
 .social-icons a[href*="facebook.com"] i {
     color: #1877F2;
 }
@@ -166,7 +134,6 @@ body {
     color: #1256A1;
 }
 
-/* YouTube - Red */
 .social-icons a[href*="youtube.com"] i {
     color: #FF0000;
 }
@@ -175,7 +142,6 @@ body {
     color: #CC0000;
 }
 
-/* Instagram - Gradient */
 .social-icons a[href*="instagram.com"] i {
     background: linear-gradient(45deg, #FCAF45, #E1306C, #833AB4);
     background-clip: text;
@@ -192,68 +158,137 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
+@media (max-width: 1024px) {
+    .content-container {
+        margin-top: 150px;
+        margin-left: 3%;
+        gap: 30px;
+    }
 
+    .profile-image {
+        width: min(250px, 30vw);
+    }
+}
 
-
-
-/* Mobile Responsive Design */
 @media (max-width: 768px) {
     .content-container {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        margin-top: 50px; /* Adjust margin for mobile */
+        margin-top: 120px;
         margin-left: 0;
-        padding: 10px;
+        padding: 20px 15px;
+        gap: 20px;
     }
 
     .content {
-        width: 90%; /* Adjust width for better spacing */
+        width: 100%;
         padding: 10px;
     }
 
-    .head {
-        font-size: 2rem; /* Reduce font size for better fit */
-    }
-
     .software {
-        font-size: 2rem;
-        margin-top: 25px;
+        margin-top: 10px;
     }
 
     .paragraph {
-        font-size: 1rem;
         max-width: 100%;
-        margin-right: 0;
     }
 
     .profile-image {
-        width: 80%; /* Adjust size while maintaining aspect ratio */
-        max-width: 250px;
-        height: auto;
-        margin-top: 20px;
+        width: min(220px, 60vw);
+        margin-top: 10px;
     }
 
     .bt {
-        width: 80%; /* Make button fit well on mobile */
-        padding: 18px;
-        font-size: 1rem;
-        margin-top: 20px;
-        margin-left: 50px;
+        width: auto;
+        padding: 16px 24px;
+        margin: 15px auto 20px;
     }
 
     .social-icons {
-        margin-top: 20px;
         margin-left: 0;
-        display: flex;
         justify-content: center;
-        flex-wrap: wrap;
-        order: 1; /* Ensure it appears below the button */
     }
 
     .social-icons a {
-        margin: 0 10px; /* Adjust spacing between icons */
-        font-size: 1.8rem; /* Scale icons properly */
+        margin: 0 8px;
+    }
+}
+
+@media (max-width: 400px) {
+    .content-container {
+        margin-top: 100px;
+        padding: 10px;
+    }
+
+    .profile-image {
+        width: min(180px, 55vw);
+    }
+
+    .bt {
+        padding: 14px 20px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (min-width: 1600px) {
+    .content-container {
+        max-width: 1300px;
+        margin-top: 200px;
+        gap: 60px;
+    }
+
+    .content {
+        max-width: 700px;
+    }
+
+    .head {
+        font-size: 3.5rem;
+    }
+
+    .software {
+        font-size: 3.2rem;
+    }
+
+    .paragraph {
+        font-size: 1.3rem;
+    }
+
+    .profile-image {
+        width: 380px;
+    }
+
+    .bt {
+        padding: 22px 34px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 2200px) {
+    .content-container {
+        max-width: 1500px;
+        margin-top: 220px;
+        gap: 80px;
+    }
+
+    .content {
+        max-width: 800px;
+    }
+
+    .head {
+        font-size: 4rem;
+    }
+
+    .software {
+        font-size: 3.6rem;
+    }
+
+    .paragraph {
+        font-size: 1.5rem;
+    }
+
+    .profile-image {
+        width: 450px;
     }
 }
 

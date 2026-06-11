@@ -1,36 +1,12 @@
-/* General Styling */
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #1a1a2e;
-  color: #ffffff;
-  text-align: center;
-}
-
-/* Add padding to the top of the content section */
-.content-container {
-  margin-top: 80px; /* Adjust the value based on your top bar height */
-  padding: 20px;
-  max-width: 900px;
-  border-radius: 10px;
-  transition: opacity 0.8s ease-in-out, transform 1s ease-in-out;
-}
-
-/* You can also add some padding to the top of the section directly */
 .content {
-  padding-top: 25vh; /* This will ensure there is space above the content */
-  padding-left: 15vh;
+  padding-top: 22vh;
+  padding-left: 5%;
+  padding-right: 5%;
+  max-width: 1000px;
 }
 
-
-/* Header (H1 Styling) */
 h1 {
-  font-size: 3rem;
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: bold;
   color: #00adb5;
   text-transform: uppercase;
@@ -40,20 +16,19 @@ h1 {
   animation-delay: 0.2s;
 }
 
-/* Paragraph (P Styling) */
 p {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
   margin-top: 10px;
   opacity: 0;
   line-height: 1.6;
   animation: fadeInUp 1s ease-out forwards;
   animation-delay: 0.5s;
+  color: #eeeeee;
 }
 
-/* Tech Stack Styling */
 .tech-stack {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 20px;
   justify-content: center;
   align-items: center;
@@ -80,54 +55,12 @@ p {
   transform: scale(1.2);
 }
 
-/* Button Styling */
-.bt {
-  display: inline-block;
-  padding: 22px 24px;
-  margin-top: 20px;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #ffffff;
-  background: #00adb5;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+.tech p {
+  color: #cccccc;
+  font-size: 0.9rem;
+  margin-top: 8px;
 }
 
-.bt:hover {
-  background: #008c96;
-  transform: scale(1.05);
-}
-
-/* Social Icons Below Button */
-.social-icons {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.social-icons a {
-  margin: 0 10px;
-  font-size: 2rem;
-  color: #ffffff;
-  transition: transform 0.3s ease-in-out;
-}
-
-.social-icons a:hover {
-  transform: scale(1.2);
-}
-
-.social-icons i {
-  color: #00adb5;
-}
-
-.social-icons a:hover i {
-  color: #008c96;
-}
-
-/* Animation Keyframes */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -139,37 +72,96 @@ p {
   }
 }
 
-/* Responsive Design */
+@media (max-width: 1024px) {
+  .content {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+}
+
 @media (max-width: 768px) {
-  .content-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-top: 50px; /* Adjust margin for mobile */
-    margin-left: 0;
-    padding: 10px;
-}
-
-.content {
-    width: 90%; /* Adjust width for better spacing */
-    margin-left: 4vh;
-    padding: 10px;
-    padding-top: 13vh;
-}
-
-  h1 {
-    font-size: 2.5rem;
+  .content {
+    padding-top: 14vh;
+    padding-left: 5%;
+    padding-right: 5%;
   }
 
-  p {
-    font-size: 1rem;
+  h1 {
+    font-size: 2rem;
   }
 
   .tech-stack {
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    gap: 15px;
   }
 
   .tech img {
     max-width: 60px;
+  }
+}
+
+@media (max-width: 400px) {
+  .content {
+    padding-top: 12vh;
+  }
+
+  .tech-stack {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .tech img {
+    max-width: 50px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .content {
+    max-width: 1300px;
+    padding-top: 20vh;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  p {
+    font-size: 1.3rem;
+  }
+
+  .tech-stack {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 30px;
+  }
+
+  .tech img {
+    max-width: 100px;
+  }
+
+  .tech p {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 2200px) {
+  .content {
+    max-width: 1500px;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
+
+  .tech-stack {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 35px;
+  }
+
+  .tech img {
+    max-width: 120px;
   }
 }
